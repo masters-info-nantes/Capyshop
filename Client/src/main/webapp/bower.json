@@ -1,0 +1,17 @@
+{
+  "name": "Client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/masters-info-nantes/Capyshop",
+  "authors": [
+    "TheCreatorFr <MrBrondinNicolas@gmail.com>"
+  ],
+  "main": "index.jsp",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

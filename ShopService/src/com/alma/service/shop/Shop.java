@@ -8,6 +8,7 @@ import org.apache.axis2.AxisFault;
 import com.alma.service.bank.BankStub;
 import com.alma.service.supplier.SupplierStub;
 import com.alma.service.supplier.SupplierStub.GetProducts;
+import com.alma.service.supplier.SupplierStub.Validate;
 
 
 public class Shop {
