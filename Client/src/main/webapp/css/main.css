@@ -129,18 +129,33 @@ html,body
     	border:none;
     }
     
-    ul li label
+    .products ul li div
     {
-    	width:33%;
+    	float:left;
+    	width:24%;
     }
-    ul li span
+    
+    .cart ul li div
     {
-    	width:33%;
+    	float:left;
+    	width:49%;
+    }
+    
+    .products ul li div button
+    {
+    	margin-top:7.5px;
+    	background: #3498db;
+    }
+    
+    .cart ul li div button
+    {
+    	margin-top:7.5px;
+    	background:#bdc3c7;
     }
     
     button
     {
-    	background: #3498db;
+    	background: #2ecc71;
     	border:none;
     	border-radius:none;
     	color:white;
@@ -173,6 +188,17 @@ html,body
     	background:white;
     	box-shadow:0px 1px 2px rgba(0, 0, 0, 0.1);
     	padding:20px;
+    	text-align:right;
+    }
+    
+    .popup .content h3
+    {
+    	text-align:center;
+    }
+    
+    .popup .content button
+    {
+    	margin-top:10px;
     }
     
     .popup .content label
@@ -181,6 +207,7 @@ html,body
     	width:20%;
     	height:35px;
     	line-height:35px;
+    	padding-right:20px;
     }
     
     .popup .content input
@@ -188,6 +215,6 @@ html,body
     	height:35px;
     	width:70%;
     	border: 1px solid #ecf0f1;
-    	color: #ecf0f1;
+    	color: #7f8c8d;
     	border-radius:none;
     }

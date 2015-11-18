@@ -12,13 +12,13 @@ public class Supplier {
 		this.db = new DBManager();
 	}
 	
-	public List<String> getProducts(){
+	public List<Product> getProducts(){
 		// Mock
-		List<String> products = new ArrayList<String>();
-		products.add("Capybara roux");
-		products.add("Capybara rayé");
-		products.add("Capybara gris (vieux)");
-		products.add("Capybara blanc (albinos)");
+		List<Product> products = new ArrayList<Product>();
+		products.add(new Product("Capybara roux","Capybara roux", 4, 150.0));
+		products.add(new Product("Capybara roux","Capybara rayé", 4, 170.50));
+		products.add(new Product("Capybara roux","Capybara blanc", 4, 185.0));
+		products.add(new Product("Capybara roux","Capybara rose", 4, 199.99));
 		// End Mock
 		return products;
 	}

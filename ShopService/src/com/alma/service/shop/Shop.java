@@ -8,6 +8,7 @@ import org.apache.axis2.AxisFault;
 import com.alma.service.bank.BankStub;
 import com.alma.service.supplier.SupplierStub;
 import com.alma.service.supplier.SupplierStub.GetProducts;
+import com.alma.service.supplier.SupplierStub.Product;
 import com.alma.service.supplier.SupplierStub.Validate;
 
 
@@ -22,7 +23,7 @@ public class Shop {
 		this.bank = new BankStub("http://localhost:9763/services/Bank/");
 	}
 	
-	public String[] getProducts() throws RemoteException{
+	public Product[] getProducts() throws RemoteException{
 		//Call Supplier and return product list
 		GetProducts g = new GetProducts();
 		return this.supplier.getProducts(g).get_return();
