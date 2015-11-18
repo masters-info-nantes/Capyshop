@@ -49,7 +49,7 @@
                 <configuration>
                     <outputDirectory>${basedir}/generated-sources</outputDirectory>
                     <databindingName>adb</databindingName><portName>SupplierHttpsSoap12Endpoint</portName><language>java</language><wsdlFile>http://localhost:9763/services/Supplier?wsdl</wsdlFile>
-                </configuration> 
+                </configuration>
                
             </plugin>
             <plugin>

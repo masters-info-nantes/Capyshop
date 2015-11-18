@@ -130,7 +130,7 @@
      */
     public SupplierStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://172.20.253.86:9443/services/Supplier.SupplierHttpsSoap12Endpoint/" );
+                    this(configurationContext,"https://172.20.255.55:9443/services/Supplier.SupplierHttpsSoap12Endpoint/" );
                 
     }
 
@@ -139,7 +139,7 @@
      */
     public SupplierStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://172.20.253.86:9443/services/Supplier.SupplierHttpsSoap12Endpoint/" );
+                    this("https://172.20.255.55:9443/services/Supplier.SupplierHttpsSoap12Endpoint/" );
                 
     }
 
@@ -985,7 +985,7 @@
         }
         return false;
     }
-     //https://172.20.253.86:9443/services/Supplier.SupplierHttpsSoap12Endpoint/
+     //https://172.20.255.55:9443/services/Supplier.SupplierHttpsSoap12Endpoint/
         public static class ValidateResponse
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -2148,21 +2148,21 @@
             
 
                         /**
-                        * field for Product
+                        * field for Products
                         * This was an Array!
                         */
 
                         
-                                    protected java.lang.String[] localProduct ;
+                                    protected java.lang.String[] localProducts ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localProductTracker = false ;
+                           protected boolean localProductsTracker = false ;
 
-                           public boolean isProductSpecified(){
-                               return localProductTracker;
+                           public boolean isProductsSpecified(){
+                               return localProductsTracker;
                            }
 
                            
@@ -2171,8 +2171,8 @@
                            * Auto generated getter method
                            * @return java.lang.String[]
                            */
-                           public  java.lang.String[] getProduct(){
-                               return localProduct;
+                           public  java.lang.String[] getProducts(){
+                               return localProducts;
                            }
 
                            
@@ -2181,24 +2181,24 @@
 
                                
                               /**
-                               * validate the array for Product
+                               * validate the array for Products
                                */
-                              protected void validateProduct(java.lang.String[] param){
+                              protected void validateProducts(java.lang.String[] param){
                              
                               }
 
 
                              /**
                               * Auto generated setter method
-                              * @param param Product
+                              * @param param Products
                               */
-                              public void setProduct(java.lang.String[] param){
+                              public void setProducts(java.lang.String[] param){
                               
-                                   validateProduct(param);
+                                   validateProducts(param);
 
-                               localProductTracker = true;
+                               localProductsTracker = true;
                                       
-                                      this.localProduct=param;
+                                      this.localProducts=param;
                               }
 
                                
@@ -2207,25 +2207,193 @@
                              * Auto generated add method for the array for convenience
                              * @param param java.lang.String
                              */
-                             public void addProduct(java.lang.String param){
-                                   if (localProduct == null){
-                                   localProduct = new java.lang.String[]{};
+                             public void addProducts(java.lang.String param){
+                                   if (localProducts == null){
+                                   localProducts = new java.lang.String[]{};
                                    }
 
                             
                                  //update the setting tracker
-                                localProductTracker = true;
+                                localProductsTracker = true;
                             
 
                                java.util.List list =
-                            org.apache.axis2.databinding.utils.ConverterUtil.toList(localProduct);
+                            org.apache.axis2.databinding.utils.ConverterUtil.toList(localProducts);
                                list.add(param);
-                               this.localProduct =
+                               this.localProducts =
                              (java.lang.String[])list.toArray(
                             new java.lang.String[list.size()]);
 
                              }
                              
+
+                        /**
+                        * field for Name
+                        */
+
+                        
+                                    protected java.lang.String localName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localNameTracker = false ;
+
+                           public boolean isNameSpecified(){
+                               return localNameTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getName(){
+                               return localName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Name
+                               */
+                               public void setName(java.lang.String param){
+                            localNameTracker = true;
+                                   
+                                            this.localName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Address
+                        */
+
+                        
+                                    protected java.lang.String localAddress ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAddressTracker = false ;
+
+                           public boolean isAddressSpecified(){
+                               return localAddressTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getAddress(){
+                               return localAddress;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Address
+                               */
+                               public void setAddress(java.lang.String param){
+                            localAddressTracker = true;
+                                   
+                                            this.localAddress=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for PostCode
+                        */
+
+                        
+                                    protected java.lang.String localPostCode ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPostCodeTracker = false ;
+
+                           public boolean isPostCodeSpecified(){
+                               return localPostCodeTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getPostCode(){
+                               return localPostCode;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param PostCode
+                               */
+                               public void setPostCode(java.lang.String param){
+                            localPostCodeTracker = true;
+                                   
+                                            this.localPostCode=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for City
+                        */
+
+                        
+                                    protected java.lang.String localCity ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localCityTracker = false ;
+
+                           public boolean isCitySpecified(){
+                               return localCityTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getCity(){
+                               return localCity;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param City
+                               */
+                               public void setCity(java.lang.String param){
+                            localCityTracker = true;
+                                   
+                                            this.localCity=param;
+                                    
+
+                               }
+                            
 
      
      
@@ -2285,17 +2453,17 @@
 
                
                    }
-                if (localProductTracker){
-                             if (localProduct!=null) {
+                if (localProductsTracker){
+                             if (localProducts!=null) {
                                    namespace = "http://supplier.service.alma.com";
-                                   for (int i = 0;i < localProduct.length;i++){
+                                   for (int i = 0;i < localProducts.length;i++){
                                         
-                                            if (localProduct[i] != null){
+                                            if (localProducts[i] != null){
                                         
-                                                writeStartElement(null, namespace, "product", xmlWriter);
+                                                writeStartElement(null, namespace, "products", xmlWriter);
 
                                             
-                                                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProduct[i]));
+                                                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProducts[i]));
                                                     
                                                 xmlWriter.writeEndElement();
                                               
@@ -2303,7 +2471,7 @@
                                                    
                                                            // write null attribute
                                                             namespace = "http://supplier.service.alma.com";
-                                                            writeStartElement(null, namespace, "product", xmlWriter);
+                                                            writeStartElement(null, namespace, "products", xmlWriter);
                                                             writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
                                                             xmlWriter.writeEndElement();
                                                        
@@ -2314,7 +2482,7 @@
                                  
                                          // write the null attribute
                                         // write null attribute
-                                           writeStartElement(null, "http://supplier.service.alma.com", "product", xmlWriter);
+                                           writeStartElement(null, "http://supplier.service.alma.com", "products", xmlWriter);
 
                                            // write the nil attribute
                                            writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
@@ -2322,7 +2490,79 @@
                                     
                              }
 
-                        }
+                        } if (localNameTracker){
+                                    namespace = "http://supplier.service.alma.com";
+                                    writeStartElement(null, namespace, "name", xmlWriter);
+                             
+
+                                          if (localName==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localAddressTracker){
+                                    namespace = "http://supplier.service.alma.com";
+                                    writeStartElement(null, namespace, "address", xmlWriter);
+                             
+
+                                          if (localAddress==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localAddress);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localPostCodeTracker){
+                                    namespace = "http://supplier.service.alma.com";
+                                    writeStartElement(null, namespace, "postCode", xmlWriter);
+                             
+
+                                          if (localPostCode==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localPostCode);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localCityTracker){
+                                    namespace = "http://supplier.service.alma.com";
+                                    writeStartElement(null, namespace, "city", xmlWriter);
+                             
+
+                                          if (localCity==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localCity);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
                     xmlWriter.writeEndElement();
                
 
@@ -2502,19 +2742,19 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localProductTracker){
-                            if (localProduct!=null){
-                                  for (int i = 0;i < localProduct.length;i++){
+                 if (localProductsTracker){
+                            if (localProducts!=null){
+                                  for (int i = 0;i < localProducts.length;i++){
                                       
-                                         if (localProduct[i] != null){
+                                         if (localProducts[i] != null){
                                           elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
-                                                                              "product"));
+                                                                              "products"));
                                           elementList.add(
-                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProduct[i]));
+                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProducts[i]));
                                           } else {
                                              
                                                     elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
-                                                                              "product"));
+                                                                              "products"));
                                                     elementList.add(null);
                                                 
                                           }
@@ -2524,12 +2764,36 @@
                             } else {
                               
                                     elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
-                                                                              "product"));
+                                                                              "products"));
                                     elementList.add(null);
                                 
                             }
 
-                        }
+                        } if (localNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
+                                                                      "name"));
+                                 
+                                         elementList.add(localName==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localName));
+                                    } if (localAddressTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
+                                                                      "address"));
+                                 
+                                         elementList.add(localAddress==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAddress));
+                                    } if (localPostCodeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
+                                                                      "postCode"));
+                                 
+                                         elementList.add(localPostCode==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPostCode));
+                                    } if (localCityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
+                                                                      "city"));
+                                 
+                                         elementList.add(localCity==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCity));
+                                    }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -2610,7 +2874,7 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com","product").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com","products").equals(reader.getName())){
                                 
                                     
                                     
@@ -2640,7 +2904,7 @@
                                                     //two continuous end elements means we are exiting the xml structure
                                                     loopDone1 = true;
                                                 } else {
-                                                    if (new javax.xml.namespace.QName("http://supplier.service.alma.com","product").equals(reader.getName())){
+                                                    if (new javax.xml.namespace.QName("http://supplier.service.alma.com","products").equals(reader.getName())){
                                                          
                                                           nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                                           if ("true".equals(nillableValue) || "1".equals(nillableValue)){
@@ -2657,9 +2921,121 @@
                                             }
                                             // call the converter utility  to convert and set the array
                                             
-                                                    object.setProduct((java.lang.String[])
+                                                    object.setProducts((java.lang.String[])
                                                         list1.toArray(new java.lang.String[list1.size()]));
                                                 
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com","name").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com","address").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAddress(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com","postCode").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPostCode(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com","city").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setCity(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
                               }  // End of if for expected property start element
                                 
                                     else {
@@ -2702,6 +3078,16 @@
                   "Product".equals(typeName)){
                    
                             return  Product.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://supplier.service.alma.com/xsd".equals(namespaceURI) &&
+                  "Order".equals(typeName)){
+                   
+                            return  Order.Factory.parse(reader);
                         
 
                   }
@@ -3708,7 +4094,7 @@
                         */
 
                         
-                                    protected java.lang.String local_return ;
+                                    protected Order local_return ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
@@ -3724,9 +4110,9 @@
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String
+                           * @return Order
                            */
-                           public  java.lang.String get_return(){
+                           public  Order get_return(){
                                return local_return;
                            }
 
@@ -3736,7 +4122,7 @@
                                * Auto generated setter method
                                * @param param _return
                                */
-                               public void set_return(java.lang.String param){
+                               public void set_return(Order param){
                             local_returnTracker = true;
                                    
                                             this.local_return=param;
@@ -3804,24 +4190,18 @@
                
                    }
                 if (local_returnTracker){
-                                    namespace = "http://supplier.service.alma.com";
-                                    writeStartElement(null, namespace, "return", xmlWriter);
-                             
+                                    if (local_return==null){
 
-                                          if (local_return==null){
-                                              // write the nil attribute
-                                              
-                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                  
-                                          }else{
+                                        writeStartElement(null, "http://supplier.service.alma.com", "return", xmlWriter);
 
-                                        
-                                                   xmlWriter.writeCharacters(local_return);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
+                                       // write the nil attribute
+                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                      xmlWriter.writeEndElement();
+                                    }else{
+                                     local_return.serialize(new javax.xml.namespace.QName("http://supplier.service.alma.com","return"),
+                                        xmlWriter);
+                                    }
+                                }
                     xmlWriter.writeEndElement();
                
 
@@ -4002,12 +4382,13 @@
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
                  if (local_returnTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
+                            elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com",
                                                                       "return"));
-                                 
-                                         elementList.add(local_return==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(local_return));
-                                    }
+                            
+                            
+                                    elementList.add(local_return==null?null:
+                                    local_return);
+                                }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -4088,23 +4469,19 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com","return").equals(reader.getName())){
                                 
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.set_return(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                          object.set_return(null);
+                                          reader.next();
                                             
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
+                                            reader.next();
+                                          
+                                      }else{
                                     
+                                                object.set_return(Order.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    }
                               }  // End of if for expected property start element
                                 
                                     else {
@@ -4459,6 +4836,908 @@
                     
                     reader.next();
                   
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                            
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+    
+        public static class Order
+        implements org.apache.axis2.databinding.ADBBean{
+        /* This type was generated from the piece of schema that had
+                name = Order
+                Namespace URI = http://supplier.service.alma.com/xsd
+                Namespace Prefix = ns1
+                */
+            
+
+                        /**
+                        * field for Address
+                        */
+
+                        
+                                    protected java.lang.String localAddress ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAddressTracker = false ;
+
+                           public boolean isAddressSpecified(){
+                               return localAddressTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getAddress(){
+                               return localAddress;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Address
+                               */
+                               public void setAddress(java.lang.String param){
+                            localAddressTracker = true;
+                                   
+                                            this.localAddress=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for City
+                        */
+
+                        
+                                    protected java.lang.String localCity ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localCityTracker = false ;
+
+                           public boolean isCitySpecified(){
+                               return localCityTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getCity(){
+                               return localCity;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param City
+                               */
+                               public void setCity(java.lang.String param){
+                            localCityTracker = true;
+                                   
+                                            this.localCity=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Name
+                        */
+
+                        
+                                    protected java.lang.String localName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localNameTracker = false ;
+
+                           public boolean isNameSpecified(){
+                               return localNameTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getName(){
+                               return localName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Name
+                               */
+                               public void setName(java.lang.String param){
+                            localNameTracker = true;
+                                   
+                                            this.localName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for PostCode
+                        */
+
+                        
+                                    protected java.lang.String localPostCode ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPostCodeTracker = false ;
+
+                           public boolean isPostCodeSpecified(){
+                               return localPostCodeTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getPostCode(){
+                               return localPostCode;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param PostCode
+                               */
+                               public void setPostCode(java.lang.String param){
+                            localPostCodeTracker = true;
+                                   
+                                            this.localPostCode=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Products
+                        */
+
+                        
+                                    protected java.lang.Object localProducts ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localProductsTracker = false ;
+
+                           public boolean isProductsSpecified(){
+                               return localProductsTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.Object
+                           */
+                           public  java.lang.Object getProducts(){
+                               return localProducts;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Products
+                               */
+                               public void setProducts(java.lang.Object param){
+                            localProductsTracker = true;
+                                   
+                                            this.localProducts=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Total
+                        */
+
+                        
+                                    protected double localTotal ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localTotalTracker = false ;
+
+                           public boolean isTotalSpecified(){
+                               return localTotalTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return double
+                           */
+                           public  double getTotal(){
+                               return localTotal;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Total
+                               */
+                               public void setTotal(double param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       localTotalTracker =
+                                       !java.lang.Double.isNaN(param);
+                                   
+                                            this.localTotal=param;
+                                    
+
+                               }
+                            
+
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
+            
+        }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+
+
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
+
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://supplier.service.alma.com/xsd");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":Order",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "Order",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (localAddressTracker){
+                                    namespace = "http://supplier.service.alma.com/xsd";
+                                    writeStartElement(null, namespace, "address", xmlWriter);
+                             
+
+                                          if (localAddress==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localAddress);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localCityTracker){
+                                    namespace = "http://supplier.service.alma.com/xsd";
+                                    writeStartElement(null, namespace, "city", xmlWriter);
+                             
+
+                                          if (localCity==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localCity);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localNameTracker){
+                                    namespace = "http://supplier.service.alma.com/xsd";
+                                    writeStartElement(null, namespace, "name", xmlWriter);
+                             
+
+                                          if (localName==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localPostCodeTracker){
+                                    namespace = "http://supplier.service.alma.com/xsd";
+                                    writeStartElement(null, namespace, "postCode", xmlWriter);
+                             
+
+                                          if (localPostCode==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localPostCode);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localProductsTracker){
+                            
+                            if (localProducts!=null){
+                                if (localProducts instanceof org.apache.axis2.databinding.ADBBean){
+                                    ((org.apache.axis2.databinding.ADBBean)localProducts).serialize(
+                                               new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd","products"),
+                                               xmlWriter,true);
+                                 } else {
+                                    writeStartElement(null, "http://supplier.service.alma.com/xsd", "products", xmlWriter);
+                                    org.apache.axis2.databinding.utils.ConverterUtil.serializeAnyType(localProducts, xmlWriter);
+                                    xmlWriter.writeEndElement();
+                                 }
+                            } else {
+                                
+                                        // write null attribute
+                                           writeStartElement(null, "http://supplier.service.alma.com/xsd", "products", xmlWriter);
+
+                                           // write the nil attribute
+                                           writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                           xmlWriter.writeEndElement();
+                                    
+                            }
+
+
+                        } if (localTotalTracker){
+                                    namespace = "http://supplier.service.alma.com/xsd";
+                                    writeStartElement(null, namespace, "total", xmlWriter);
+                             
+                                               if (java.lang.Double.isNaN(localTotal)) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("total cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTotal));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://supplier.service.alma.com/xsd")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        /**
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+        /**
+         * Register a namespace prefix
+         */
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                }
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            return prefix;
+        }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (localAddressTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd",
+                                                                      "address"));
+                                 
+                                         elementList.add(localAddress==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAddress));
+                                    } if (localCityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd",
+                                                                      "city"));
+                                 
+                                         elementList.add(localCity==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCity));
+                                    } if (localNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd",
+                                                                      "name"));
+                                 
+                                         elementList.add(localName==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localName));
+                                    } if (localPostCodeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd",
+                                                                      "postCode"));
+                                 
+                                         elementList.add(localPostCode==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPostCode));
+                                    } if (localProductsTracker){
+                            elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd",
+                                                                      "products"));
+                            
+                            
+                                    elementList.add(localProducts==null?null:
+                                    localProducts);
+                                } if (localTotalTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd",
+                                                                      "total"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTotal));
+                            }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static Order parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            Order object =
+                new Order();
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
+                    }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"Order".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (Order)ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
+
+                }
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                
+                    
+                    reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd","address").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAddress(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd","city").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setCity(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd","name").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd","postCode").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPostCode(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd","products").equals(reader.getName())){
+                                
+                                     object.setProducts(org.apache.axis2.databinding.utils.ConverterUtil.getAnyTypeObject(reader,
+                                                ExtensionMapper.class));
+                                       
+                                         reader.next();
+                                     
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://supplier.service.alma.com/xsd","total").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"total" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setTotal(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDouble(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                               object.setTotal(java.lang.Double.NaN);
+                                           
+                                    }
+                                  
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             

@@ -2,13 +2,16 @@ package com.alma.service.shop;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.axis2.AxisFault;
 
 import com.alma.service.bank.BankStub;
+import com.alma.service.supplier.SupplierStub.SaveOrder;
 import com.alma.service.supplier.SupplierStub;
 import com.alma.service.supplier.SupplierStub.GetProducts;
 import com.alma.service.supplier.SupplierStub.Product;
+import com.alma.service.supplier.SupplierStub.Order;
 import com.alma.service.supplier.SupplierStub.Validate;
 
 
@@ -29,13 +32,20 @@ public class Shop {
 		return this.supplier.getProducts(g).get_return();
 	}
 	
-	public String placeOrder(ArrayList<String> product){
+	public Order placeOrder(String[] products, String name, String address, String postCode, String city) throws RemoteException{
 		//Call Supplier to validate command
-		return null;
+		SaveOrder p = new SaveOrder();
+		p.setProducts(products);
+		p.setName(name);
+		p.setAddress(address);
+		p.setPostCode(postCode);
+		p.setCity(city);
+		return this.supplier.saveOrder(p).get_return();
 	}
 	
-	public boolean pay(String order, String creditCard){
+	public boolean pay(String orderId, String number, String expire, int crypt){
 		//Call Bank to pay
+		//Call supplier to validate order
 		return true;
 	}
 	

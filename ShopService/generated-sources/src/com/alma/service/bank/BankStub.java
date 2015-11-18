@@ -106,7 +106,7 @@
      */
     public BankStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://192.168.1.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
+                    this(configurationContext,"https://172.20.255.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
                 
     }
 
@@ -115,7 +115,7 @@
      */
     public BankStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://192.168.1.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
+                    this("https://172.20.255.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
                 
     }
 
@@ -427,7 +427,7 @@
         }
         return false;
     }
-     //https://192.168.1.55:9443/services/Bank.BankHttpsSoap12Endpoint/
+     //https://172.20.255.55:9443/services/Bank.BankHttpsSoap12Endpoint/
         public static class Pay
         implements org.apache.axis2.databinding.ADBBean{
         

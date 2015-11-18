@@ -1,29 +1,41 @@
 package com.alma.service.bank;
 
+import java.util.ArrayList;
+
 public class Bank {
 	
-	private Card getCard(int number, int year, int month)
+	private Card getCard(String number, String expire,int crypt)
 	{
 		//Mock
-		return new Card(number,year,month,200);
+		ArrayList<Card> cards = new ArrayList<Card>();
+		cards.add(new Card("0000-0000-0000-0000", "12/17",124, 5500, "eur"));
+		cards.add(new Card("1111-1111-1111-1111", "12/17",124, 4200, "usd"));
+		cards.add(new Card("2222-2222-2222-2222", "12/17",124, 150000, "yen"));
+		for(Card card : cards)
+		{
+			if(card.getNumber().equals(number)&&card.getExpire().equals(expire)&&card.getCrypt()==crypt)
+			{
+				return card;
+			}
+		}
+		return null;
 		//Mock End
 	}
 	
-	private boolean isCardValid(int number, int year, int month)
+	private boolean isCardValid(String number, String expire, int crypt )
 	{
 		//Mock
-		// valid if date > today && number is long enough
-		if(String.valueOf(number).length()!=16)
-			return false;
+		// To-Do
 		return true;
 		//End Mock
 	}
 
-	public boolean pay(int number, int year, int month, int money){
+	public boolean pay(String number, String expire, int crypt, int money){
 		// Mock 
-		if(!isCardValid(number,year,month))
+		if(!isCardValid(number,expire,crypt))
 			return false;
-		Card c = this.getCard(number, year, month);
+		Card c = this.getCard(number, expire, crypt);
+		// Be careful with currency conversion
 		if(c.getMoney()<money)
 			return false;
 		// End Mock
