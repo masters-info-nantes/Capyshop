@@ -5,31 +5,35 @@ import java.util.List;
 
 public class Supplier {
 	
-	private DBManager db;
 	private List<Product> products;
 	
-	public Supplier()
-	{
-		this.db = new DBManager();
-		//Mock
+	public Supplier(){
+		
+		// Mock //
+		
 		this.products = new ArrayList<Product>();
 		products.add(new Product("capy_roux","Capybara roux", 4, 150.0));
 		products.add(new Product("capy_raye","Capybara rayé", 4, 170.50));
 		products.add(new Product("capy_blanc","Capybara blanc", 4, 185.0));
 		products.add(new Product("capy_rose","Capybara rose", 4, 199.99));
-		// End Mock
+		
+		// End Mock //
 	}
 	
 	public List<Product> getProducts(){
-		// Mock
-		
-		// End Mock
+		// This is the method where we should access the database
+		// and request the products...
+
 		return this.products;
 	}
 	
 	public String saveOrder(String[] products, String name, String address, String postCode, String city){
-		// Return order and put products in DB
-		//Mock
+		// This method should create an order,store it into the database and return the id of the order
+		
+		// Mock //
+		
+		// Find the product according to it's id
+		
 		List<Product> ps = new ArrayList<Product>();
 		for(String product: products)
 		{
@@ -41,16 +45,22 @@ public class Supplier {
 				}
 			}
 		}
+		
 		Order o = new Order(address,name,postCode,city,ps);
-		// End Mock
+		
+		// End Mock //
+		
 		return o.getId();
 	}
 	
 	public boolean validate(String order){
-		//Mock
-		order = "Order N°131431 Total: 152€ Status: Validated";
-		// End Mock
-		//Notify payment
+		
+		// Mock //
+		
+		// This method should update the status of the order to validated:true in the database
+		
+		// End Mock //
+		
 		return true;
 	}
 	
