@@ -11,7 +11,6 @@ import com.alma.service.supplier.SupplierStub.SaveOrder;
 import com.alma.service.supplier.SupplierStub;
 import com.alma.service.supplier.SupplierStub.GetProducts;
 import com.alma.service.supplier.SupplierStub.Product;
-import com.alma.service.supplier.SupplierStub.Order;
 import com.alma.service.supplier.SupplierStub.Validate;
 
 
@@ -32,7 +31,7 @@ public class Shop {
 		return this.supplier.getProducts(g).get_return();
 	}
 	
-	public Order placeOrder(String[] products, String name, String address, String postCode, String city) throws RemoteException{
+	public String placeOrder(String[] products, String name, String address, String postCode, String city) throws RemoteException{
 		//Call Supplier to validate command
 		SaveOrder p = new SaveOrder();
 		p.setProducts(products);

@@ -13,10 +13,10 @@ public class Supplier {
 		this.db = new DBManager();
 		//Mock
 		this.products = new ArrayList<Product>();
-		products.add(new Product("Capybara roux","Capybara roux", 4, 150.0));
-		products.add(new Product("Capybara roux","Capybara rayé", 4, 170.50));
-		products.add(new Product("Capybara roux","Capybara blanc", 4, 185.0));
-		products.add(new Product("Capybara roux","Capybara rose", 4, 199.99));
+		products.add(new Product("capy_roux","Capybara roux", 4, 150.0));
+		products.add(new Product("capy_raye","Capybara rayé", 4, 170.50));
+		products.add(new Product("capy_blanc","Capybara blanc", 4, 185.0));
+		products.add(new Product("capy_rose","Capybara rose", 4, 199.99));
 		// End Mock
 	}
 	
@@ -27,7 +27,7 @@ public class Supplier {
 		return this.products;
 	}
 	
-	public Order saveOrder(List<String> products, String name, String address, String postCode, String city){
+	public String saveOrder(String[] products, String name, String address, String postCode, String city){
 		// Return order and put products in DB
 		//Mock
 		List<Product> ps = new ArrayList<Product>();
@@ -41,9 +41,9 @@ public class Supplier {
 				}
 			}
 		}
-		Order o = new Order("zedf58s34v21",address,name,postCode,city,ps);
+		Order o = new Order(address,name,postCode,city,ps);
 		// End Mock
-		return o;
+		return o.getId();
 	}
 	
 	public boolean validate(String order){

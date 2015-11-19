@@ -1,6 +1,7 @@
 package com.alma.service.supplier;
 
 import java.util.List;
+import java.util.Random;
 
 public class Order {
 
@@ -14,8 +15,9 @@ public class Order {
 	String postCode;
 	String city;
 	
-	public Order(String id, String address, String name, String postCode, String city, List<Product> products) {
-		this.id = id;
+	public Order( String address, String name, String postCode, String city, List<Product> products) {
+
+		this.id = "order:"+products.size()+address+name+postCode+city;
 		this.address = address;
 		this.name = name;
 		this.postCode = postCode;
@@ -26,6 +28,11 @@ public class Order {
 		{
 			this.total+=p.getPrice();
 		}
+	}
+	
+	public String getId()
+	{
+		return this.id;
 	}
 
 	public List<Product> getProducts() {

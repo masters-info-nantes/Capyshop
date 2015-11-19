@@ -8,4 +8,7 @@
     <name>Bank-Service</name>
 
     <packaging>jar</packaging>
+    <build>
+    <sourceDirectory>src</sourceDirectory>
+	</build>
 </project>

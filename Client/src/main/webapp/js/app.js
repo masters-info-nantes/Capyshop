@@ -80,6 +80,7 @@ var placeOrder = function()
 
 var error = function()
 {
+	$('.loading').hide();
 	$('.products').html('<img src="img/error.png"/><h3>Something capywrong happend...</h3><button onclick="getProducts()">Retry</button>');
 };
 

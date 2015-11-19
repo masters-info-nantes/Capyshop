@@ -8,4 +8,7 @@
     <name>Supplier-Service</name>
 
     <packaging>jar</packaging>
+    <build>
+    <sourceDirectory>src</sourceDirectory>
+	</build>
 </project>

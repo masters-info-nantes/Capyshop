@@ -106,7 +106,7 @@
      */
     public BankStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://172.20.255.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
+                    this(configurationContext,"https://192.168.1.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
                 
     }
 
@@ -115,7 +115,7 @@
      */
     public BankStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://172.20.255.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
+                    this("https://192.168.1.55:9443/services/Bank.BankHttpsSoap12Endpoint/" );
                 
     }
 
@@ -427,7 +427,7 @@
         }
         return false;
     }
-     //https://172.20.255.55:9443/services/Bank.BankHttpsSoap12Endpoint/
+     //https://192.168.1.55:9443/services/Bank.BankHttpsSoap12Endpoint/
         public static class Pay
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -443,7 +443,7 @@
                         */
 
                         
-                                    protected int localNumber ;
+                                    protected java.lang.String localNumber ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
@@ -459,9 +459,9 @@
 
                            /**
                            * Auto generated getter method
-                           * @return int
+                           * @return java.lang.String
                            */
-                           public  int getNumber(){
+                           public  java.lang.String getNumber(){
                                return localNumber;
                            }
 
@@ -471,11 +471,8 @@
                                * Auto generated setter method
                                * @param param Number
                                */
-                               public void setNumber(int param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localNumberTracker =
-                                       param != java.lang.Integer.MIN_VALUE;
+                               public void setNumber(java.lang.String param){
+                            localNumberTracker = true;
                                    
                                             this.localNumber=param;
                                     
@@ -484,65 +481,62 @@
                             
 
                         /**
-                        * field for Year
+                        * field for Expire
                         */
 
                         
-                                    protected int localYear ;
+                                    protected java.lang.String localExpire ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localYearTracker = false ;
+                           protected boolean localExpireTracker = false ;
 
-                           public boolean isYearSpecified(){
-                               return localYearTracker;
+                           public boolean isExpireSpecified(){
+                               return localExpireTracker;
                            }
 
                            
 
                            /**
                            * Auto generated getter method
-                           * @return int
+                           * @return java.lang.String
                            */
-                           public  int getYear(){
-                               return localYear;
+                           public  java.lang.String getExpire(){
+                               return localExpire;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Year
+                               * @param param Expire
                                */
-                               public void setYear(int param){
-                            
-                                       // setting primitive attribute tracker to true
-                                       localYearTracker =
-                                       param != java.lang.Integer.MIN_VALUE;
+                               public void setExpire(java.lang.String param){
+                            localExpireTracker = true;
                                    
-                                            this.localYear=param;
+                                            this.localExpire=param;
                                     
 
                                }
                             
 
                         /**
-                        * field for Month
+                        * field for Crypt
                         */
 
                         
-                                    protected int localMonth ;
+                                    protected int localCrypt ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localMonthTracker = false ;
+                           protected boolean localCryptTracker = false ;
 
-                           public boolean isMonthSpecified(){
-                               return localMonthTracker;
+                           public boolean isCryptSpecified(){
+                               return localCryptTracker;
                            }
 
                            
@@ -551,23 +545,23 @@
                            * Auto generated getter method
                            * @return int
                            */
-                           public  int getMonth(){
-                               return localMonth;
+                           public  int getCrypt(){
+                               return localCrypt;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Month
+                               * @param param Crypt
                                */
-                               public void setMonth(int param){
+                               public void setCrypt(int param){
                             
                                        // setting primitive attribute tracker to true
-                                       localMonthTracker =
+                                       localCryptTracker =
                                        param != java.lang.Integer.MIN_VALUE;
                                    
-                                            this.localMonth=param;
+                                            this.localCrypt=param;
                                     
 
                                }
@@ -680,38 +674,48 @@
                                     namespace = "http://bank.service.alma.com";
                                     writeStartElement(null, namespace, "number", xmlWriter);
                              
-                                               if (localNumber==java.lang.Integer.MIN_VALUE) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("number cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNumber));
-                                               }
+
+                                          if (localNumber==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localNumber);
+                                            
+                                          }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localYearTracker){
+                             } if (localExpireTracker){
                                     namespace = "http://bank.service.alma.com";
-                                    writeStartElement(null, namespace, "year", xmlWriter);
+                                    writeStartElement(null, namespace, "expire", xmlWriter);
                              
-                                               if (localYear==java.lang.Integer.MIN_VALUE) {
-                                           
-                                                         throw new org.apache.axis2.databinding.ADBException("year cannot be null!!");
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localYear));
-                                               }
+
+                                          if (localExpire==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localExpire);
+                                            
+                                          }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localMonthTracker){
+                             } if (localCryptTracker){
                                     namespace = "http://bank.service.alma.com";
-                                    writeStartElement(null, namespace, "month", xmlWriter);
+                                    writeStartElement(null, namespace, "crypt", xmlWriter);
                              
-                                               if (localMonth==java.lang.Integer.MIN_VALUE) {
+                                               if (localCrypt==java.lang.Integer.MIN_VALUE) {
                                            
-                                                         throw new org.apache.axis2.databinding.ADBException("month cannot be null!!");
+                                                         throw new org.apache.axis2.databinding.ADBException("crypt cannot be null!!");
                                                       
                                                } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMonth));
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCrypt));
                                                }
                                     
                                    xmlWriter.writeEndElement();
@@ -912,20 +916,20 @@
                                       elementList.add(new javax.xml.namespace.QName("http://bank.service.alma.com",
                                                                       "number"));
                                  
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNumber));
-                            } if (localYearTracker){
+                                         elementList.add(localNumber==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNumber));
+                                    } if (localExpireTracker){
                                       elementList.add(new javax.xml.namespace.QName("http://bank.service.alma.com",
-                                                                      "year"));
+                                                                      "expire"));
+                                 
+                                         elementList.add(localExpire==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localExpire));
+                                    } if (localCryptTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://bank.service.alma.com",
+                                                                      "crypt"));
                                  
                                 elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localYear));
-                            } if (localMonthTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://bank.service.alma.com",
-                                                                      "month"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMonth));
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCrypt));
                             } if (localMoneyTracker){
                                       elementList.add(new javax.xml.namespace.QName("http://bank.service.alma.com",
                                                                       "money"));
@@ -1013,67 +1017,71 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://bank.service.alma.com","number").equals(reader.getName())){
                                 
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"number" +"  cannot be null");
-                                    }
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setNumber(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
-                                              
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
                                         reader.next();
                                     
                               }  // End of if for expected property start element
                                 
                                     else {
                                         
-                                               object.setNumber(java.lang.Integer.MIN_VALUE);
-                                           
                                     }
                                 
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bank.service.alma.com","year").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bank.service.alma.com","expire").equals(reader.getName())){
                                 
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"year" +"  cannot be null");
-                                    }
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setYear(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
-                                              
+                                              object.setExpire(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
                                         reader.next();
                                     
                               }  // End of if for expected property start element
                                 
                                     else {
                                         
-                                               object.setYear(java.lang.Integer.MIN_VALUE);
-                                           
                                     }
                                 
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bank.service.alma.com","month").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://bank.service.alma.com","crypt").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"month" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"crypt" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setMonth(
+                                              object.setCrypt(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
                                               
                                         reader.next();
@@ -1082,7 +1090,7 @@
                                 
                                     else {
                                         
-                                               object.setMonth(java.lang.Integer.MIN_VALUE);
+                                               object.setCrypt(java.lang.Integer.MIN_VALUE);
                                            
                                     }
                                 
