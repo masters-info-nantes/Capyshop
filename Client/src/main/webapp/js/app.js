@@ -100,6 +100,10 @@ var pay = function()
 		    {
 		    	success();
 		    }
+		    else
+		    {
+		    	$('#error-card').show();
+		    }
 	    },
 	    error: function (soapResponse) {
 	    	console.error(soapResponse.toString());
@@ -116,6 +120,7 @@ var error = function()
 var success = function()
 {
 	$('.popup').hide();
+	$('.error').hide();
 	$('.cart').html('<img src="img/success.png"/><h3>Order successfully payed!</h3>');
 	cart = [];
 	total = 0;
@@ -195,13 +200,32 @@ var validate = function()
 	{
 		$('.error').hide();
 		placeOrder();
-		$('.popup').hide();
-		$('.payment').show();
+		showPayment();
+		$('.cart').html('<h3>You have 1 unpaid order</h3><img src="img/pending.png"/><h3>Click on the button below to pay and finish it!</h3><h3>Total: '+total+' euros</h3><button onclick="showPayment()">Pay</button>');
 	}
 	else
 	{
 		$('.error').show();
 	}
 };
+
+var showPayment = function()
+{
+	$('.popup').hide();
+	$('.payment').show();
+};
+
+var validatePayment = function()
+{
+	if( $('#card-number').val() != "" && $('#card-expire').val() != "" && $('#card-crypt').val() != "" )
+	{
+		$('.error').hide();
+		pay();
+	}
+	else
+	{
+		$('#error-fill').show()
+	}
+}
 
 getProducts();

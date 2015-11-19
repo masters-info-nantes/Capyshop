@@ -84,7 +84,6 @@ html,body
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
-    padding:2px;
     }
 
 .flex-item:nth-child(2) {
@@ -225,4 +224,10 @@ html,body
     	display:none;
     	color:#e74c3c;
     	text-align:center;
+    }
+    
+    h2
+    {
+    	margin:0;
+    	padding:0;
     }
