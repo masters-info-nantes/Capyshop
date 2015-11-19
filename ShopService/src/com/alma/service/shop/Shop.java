@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.axis2.AxisFault;
 
 import com.alma.service.bank.BankStub;
+import com.alma.service.bank.BankStub.Pay;
 import com.alma.service.supplier.SupplierStub.SaveOrder;
 import com.alma.service.supplier.SupplierStub;
 import com.alma.service.supplier.SupplierStub.GetProducts;
@@ -42,10 +43,23 @@ public class Shop {
 		return this.supplier.saveOrder(p).get_return();
 	}
 	
-	public boolean pay(String orderId, String number, String expire, int crypt){
+	public boolean pay(String orderId, String number, String expire, int crypt) throws RemoteException{
 		//Call Bank to pay
+		boolean payment;
+		boolean validate;
+		Pay p = new Pay();
+		p.setNumber(number);
+		p.setExpire(expire);
+		p.setCrypt(crypt);
+		// ?
+		p.setMoney(10);
+		payment = this.bank.pay(p).get_return();
+	
 		//Call supplier to validate order
-		return true;
+		Validate v = new Validate();
+		v.setOrder(orderId);
+		validate = this.supplier.validate(v).get_return();
+		return payment&&validate;
 	}
 	
 

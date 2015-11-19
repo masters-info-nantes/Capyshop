@@ -1,6 +1,9 @@
 package com.alma.service.bank;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Bank {
 	
@@ -26,6 +29,22 @@ public class Bank {
 	{
 		//Mock
 		// To-Do
+		if(!number.matches("[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"))
+			return false;
+		
+		Date today=new Date();
+		Date expireDate = new Date();
+		SimpleDateFormat standardDate = new SimpleDateFormat("MM/yy");
+		try {
+			expireDate= standardDate.parse(expire);
+			today= standardDate.parse(standardDate.format(today));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(today.after(expireDate))
+			return false;
+
 		return true;
 		//End Mock
 	}
