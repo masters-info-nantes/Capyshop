@@ -26,29 +26,49 @@ public class Bank {
 	
 	private Card getCard(String number, String expire,int crypt)
 	{
-		//Mock
+		// This is the method where we should access the database
+		// and request the cards...
+		
+		// Mock //
+		
 		ArrayList<Card> cards = new ArrayList<Card>();
-		cards.add(new Card("0000000000000000", "12/17",124, 5500, "EUR"));
-		cards.add(new Card("1111111111111111", "12/17",124, 4200, "USD"));
-		cards.add(new Card("2222222222222222", "12/17",124, 150000, "JPY"));
+		cards.add(new Card("0000000000000000", "12/17", 124, 5500, "EUR"));
+		cards.add(new Card("1111111111111111", "12/17", 124, 50, "USD"));
+		cards.add(new Card("2222222222222222", "12/17", 124, 150000, "JPY"));
 		for(Card card : cards)
 		{
 			if(card.getNumber().equals(number)&&card.getExpire().equals(expire)&&card.getCrypt()==crypt)
 			{
-				return card;
+				return card; // As soon as we find the corresponding card, we return it.
 			}
 		}
+		
 		return null;
-		//Mock End
+		
+		// Mock End //
+		
+	}
+	
+	private void updateCardMoney(Card c, double amount)
+	{
+		// Mock //
+		
+		// This method should update the amount of money available after the user payment
+		
+		// Mock End //
 	}
 	
 	private boolean isCardValid(String number, String expire, int crypt )
 	{
-		//Mock
-		// To-Do
-		if(!number.matches("[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"))
+		//Check if the card number is composed of 16 numbers
+		if(!number.matches("[0-9]{16}"))
 			return false;
 		
+		//Check if the cryptogram is only 3 digits long
+		if(!(crypt<=999))
+			return false;
+		
+		//Check if the expire date of the card is away from today
 		Date today=new Date();
 		Date expireDate = new Date();
 		SimpleDateFormat standardDate = new SimpleDateFormat("MM/yy");
@@ -56,18 +76,17 @@ public class Bank {
 			expireDate= standardDate.parse(expire);
 			today= standardDate.parse(standardDate.format(today));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(today.after(expireDate))
 			return false;
 
 		return true;
-		//End Mock
 	}
 	
+	// Send a HTTP GET request, used to access web services
 	private String sendGet(String url) throws Exception {
-
+		
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -83,10 +102,15 @@ public class Bank {
 
 	}
 	
+	//Convert an amount of money from one currency to euros
 	private double convert(String currency, double amount) throws Exception
 	{
+		//Calls the currency conversion web service
+		
 		String url = "http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency="+currency+"&ToCurrency=EUR";
 		String rawResponse = sendGet(url);
+		
+		//Parse the xml response from the web service
 		
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 	    DocumentBuilder db = dbf.newDocumentBuilder();
@@ -99,19 +123,33 @@ public class Bank {
         String rawConversionRate = element.getFirstChild().getTextContent();
         double conversionRate = Double.parseDouble(rawConversionRate);
         
+        //Calculate the converted amount
+        
         return amount*conversionRate;
 		
 	}
 
-	public boolean pay(String number, String expire, int crypt, int money) throws Exception{
-		// Mock 
-		if(!isCardValid(number,expire,crypt))
+	public boolean pay(String number, String expire, int crypt, int price) throws Exception{
+		
+		// Check if the card is valid
+		
+		if(!isCardValid(number,expire,crypt)){
 			return false;
-		Card c = this.getCard(number, expire, crypt);
-		// Be careful with currency conversion
-		if(convert(c.getCurrency(),c.getMoney())<money)
+		}
+		
+		// Get the card from the database (mocked)
+		
+		Card card = this.getCard(number, expire, crypt);
+		
+		// Convert the amount of available money on the account
+		// and check if there is enough to pay
+		
+		if(convert(card.getCurrency(),card.getMoney())>=price){
+			updateCardMoney(card, price);
+		}else{
 			return false;
-		// End Mock
+		}
+			
 		return true;
 	}
 	
