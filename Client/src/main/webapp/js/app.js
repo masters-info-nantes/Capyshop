@@ -1,5 +1,7 @@
 var cart = [];
 var products = [];
+var total = 0;
+var order = null;
 
 $(document).ready(function() {
     $(".only-numbers").keydown(function (e) {
@@ -48,15 +50,14 @@ var getProducts = function()
 
 var placeOrder = function()
 {
+	
 	var data = {
-	    	products:["Capybara roux","Capybara roux"],
+	    	products:cart.map(function(obj){return obj.id["_"];}),
 	    	name:$('#name').val(),
 	    	address:$('#address').val(),
 	    	postCode:$('#post-code').val(),
 	    	city:$('#city').val()
 	    };
-	console.log("validate order ");
-	console.log(data);
 	$.soap({
 	    url: 'http://localhost:9763/services/Shop/',
 	    namespaceURL:'http://shop.service.alma.com'
@@ -67,13 +68,41 @@ var placeOrder = function()
 	    soap12: true,
 	    success: function (soapResponse) {
 	        // do stuff with soapResponse
-		    	alert(soapResponse.toString());
-		        console.log(soapResponse.toJSON());
+		    console.log(soapResponse.toJSON());
+		    order = cleanOrder(soapResponse.toJSON());
 	    },
 	    error: function (soapResponse) {
 	    	console.error(soapResponse.toString());
-	        console.error('that other server might be down... or the CORS...');
-	        error();
+	    }
+	});
+};
+
+var pay = function()
+{
+	var data = {
+	    	orderId:order,
+	    	number:$('#card-number').val(),
+	    	expire:$('#card-expire').val(),
+	    	crypt:$('#card-crypt').val()
+	    };
+	$.soap({
+	    url: 'http://localhost:9763/services/Shop/',
+	    namespaceURL:'http://shop.service.alma.com'
+	});
+	$.soap({
+	    method: 'pay',
+	    data:data,
+	    soap12: true,
+	    success: function (soapResponse) {
+	        // do stuff with soapResponse
+		    console.log(soapResponse.toJSON());
+		    if(cleanPayed(soapResponse.toJSON()))
+		    {
+		    	success();
+		    }
+	    },
+	    error: function (soapResponse) {
+	    	console.error(soapResponse.toString());
 	    }
 	});
 };
@@ -84,9 +113,28 @@ var error = function()
 	$('.products').html('<img src="img/error.png"/><h3>Something capywrong happend...</h3><button onclick="getProducts()">Retry</button>');
 };
 
+var success = function()
+{
+	$('.popup').hide();
+	$('.cart').html('<img src="img/success.png"/><h3>Order successfully payed!</h3>');
+	cart = [];
+	total = 0;
+	order= null;
+};
+
+var cleanOrder = function(o)
+{
+	return o['#document']['ns:placeOrderResponse']['ns:return'];
+};
+
 var cleanProducts = function(o)
 {
 	return o['#document']['ns:getProductsResponse']['ns:return'];
+};
+
+var cleanPayed = function(o)
+{
+	return o['#document']['ns:payResponse']['ns:return'];
 };
 
 var updateProducts = function(p)
@@ -112,6 +160,7 @@ var updateCart = function()
 		{
 			$('.cart ul').append('<li><div>'+cart[i].name["_"]+'</div><div><button onclick="rem(\''+i+'\')">Remove</button></div></li>');
 		}
+		$('.cart').append('<h3>Total: '+total+' euros</h3>');
 		$('.cart').append('<button onclick="order()">Order</button>');
 	}
 };
@@ -119,12 +168,14 @@ var updateCart = function()
 var rem = function(id)
 {
 	cart.splice(id,1);
+	total-=parseFloat(products[id].price["_"]);
 	updateCart();
 }
 
 var add = function(id)
 {
 	cart.push(products[id]);
+	total+=parseFloat(products[id].price["_"]);
 	updateCart();
 };
 
@@ -140,13 +191,17 @@ var order = function()
 
 var validate = function()
 {
-	placeOrder();
-	$('.popup').hide();
-	$('.payment').show();
-};
-
-var pay = function()
-{
+	if($('#name').val() != "" && $('#address').val() != "" && $('#post-code').val() != "" && $('#city').val() != "")
+	{
+		$('.error').hide();
+		placeOrder();
+		$('.popup').hide();
+		$('.payment').show();
+	}
+	else
+	{
+		$('.error').show();
+	}
 };
 
 getProducts();
