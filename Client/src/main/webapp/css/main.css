@@ -84,6 +84,7 @@ html,body
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
+    padding:2px;
     }
 
 .flex-item:nth-child(2) {
@@ -118,7 +119,7 @@ html,body
     }
     ul li
     {
-    	height:50px;
+    	min-height:50px;
     	line-height:50px;
     	border-bottom: 1px solid #ecf0f1;
     	margin:0;
@@ -217,4 +218,11 @@ html,body
     	border: 1px solid #ecf0f1;
     	color: #7f8c8d;
     	border-radius:none;
+    }
+    
+    .popup .content .error
+    {
+    	display:none;
+    	color:#e74c3c;
+    	text-align:center;
     }
