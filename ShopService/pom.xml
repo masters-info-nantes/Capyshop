@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.alma.services</groupId>
+    <groupId>org.alma.service</groupId>
     <artifactId>shop</artifactId>
 
     <version>0.0.1-SNAPSHOT</version>
@@ -42,14 +42,14 @@
                         </goals>
                     </execution>
                 </executions>
-                <!--<configuration>
-                    <outputDirectory>${basedir}/generated-sources</outputDirectory>
-                    <databindingName>adb</databindingName><portName>BankHttpsSoap12Endpoint</portName><language>java</language><wsdlFile>http://localhost:9763/services/Bank?wsdl</wsdlFile>
-                </configuration>-->
                 <configuration>
-                    <outputDirectory>${basedir}/generated-sources</outputDirectory>
-                    <databindingName>adb</databindingName><portName>SupplierHttpsSoap12Endpoint</portName><language>java</language><wsdlFile>http://localhost:9763/services/Supplier?wsdl</wsdlFile>
+                    <outputDirectory>${basedir}</outputDirectory>
+                    <databindingName>adb</databindingName><portName>BankHttpsSoap12Endpoint</portName><language>java</language><wsdlFile>http://localhost:9763/services/Bank?wsdl</wsdlFile>
                 </configuration>
+                <!--<configuration>
+                    <outputDirectory>${basedir}</outputDirectory>
+                    <databindingName>adb</databindingName><portName>SupplierHttpsSoap12Endpoint</portName><language>java</language><wsdlFile>http://localhost:9763/services/Supplier?wsdl</wsdlFile>
+                </configuration>-->
                
             </plugin>
             <plugin>
